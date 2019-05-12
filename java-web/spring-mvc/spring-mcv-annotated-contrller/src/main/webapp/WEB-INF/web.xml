@@ -5,10 +5,6 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
 
-    <listener>
-        <!--初始化和刷新ROOT WebApplicationContext-->
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
 
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
@@ -19,6 +15,7 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
