@@ -1,0 +1,22 @@
+server:
+  port: 8081
+person:
+  last-name: zhangsan
+  age: 180
+  birth: 2017/01/01
+  boss: true
+  maps: {k1: v1,k2: 12}
+  lists:
+    - 123
+    - tom
+    - jetty
+  dog:
+    name: ${person.last-name:tom}_dog
+    age: 12
+logging:
+  level: {com.solverpeng: trace}
+
+
+name: tom
+name: "tom \n jerry" # 输出： tom 换行 jerry
+name: 'tom \n jerry' # 输出： tom \n jerry
