@@ -60,7 +60,7 @@ public class HandlerMethodRequestParamController {
 
     // 指定请求参数？
     @RequestMapping("/map5")
-    public String requestParam8(@RequestParam Map<String, String> map) {
+    public String requestParam8(@RequestParam("name") MultiValueMap<String, String> map) {
         return "requestParam8->map:" + map;
     }
 
@@ -84,7 +84,7 @@ public class HandlerMethodRequestParamController {
 
     // 参数为对象
     @RequestMapping("/map9")
-    public String requestParam12( Person person) {
+    public String requestParam12(Person person) {
         return "requestParam12->person:" + person;
     }
 }

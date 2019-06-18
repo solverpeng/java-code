@@ -67,7 +67,7 @@ public class HandlerMethodRequestParamControllerTest {
 
     @Test
     public void requestParam5() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/requestParam/map7")
+        mockMvc.perform(MockMvcRequestBuilders.get("/requestParam/map5")
                 .param("name", "tom")
                 .param("age", "22")
                 .param("email", "tom@abc.com")
