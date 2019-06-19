@@ -1,5 +1,6 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
+import com.solverpeng.controller.handlermethod.RequestParamController;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
@@ -9,13 +10,11 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.junit.Assert.*;
-
-public class HandlerMethodRequestParamControllerTest {
+public class RequestParamControllerTest {
     private MockMvc mockMvc;
     @Before
     public void setUp() throws Exception {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(new HandlerMethodRequestParamController()).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(new RequestParamController()).build();
     }
 
     // 默认为required

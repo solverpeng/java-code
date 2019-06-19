@@ -1,4 +1,4 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/cookieValue")
-public class HandlerMethodCookieValueController {
+public class CookieValueController {
 
     @GetMapping("/jsessionid")
     public String handler(@CookieValue("JSESSIONID") String cookie) {

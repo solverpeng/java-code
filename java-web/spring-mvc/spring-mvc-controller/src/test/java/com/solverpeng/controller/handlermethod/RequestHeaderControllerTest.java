@@ -1,5 +1,6 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
+import com.solverpeng.controller.handlermethod.RequestHeaderController;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
@@ -9,14 +10,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.junit.Assert.*;
-
-public class HandlerMethodRequestHeaderControllerTest {
+public class RequestHeaderControllerTest {
     private MockMvc mockMvc;
 
     @Before
     public void setUp() throws Exception {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(new HandlerMethodRequestHeaderController()).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(new RequestHeaderController()).build();
     }
 
     @Test

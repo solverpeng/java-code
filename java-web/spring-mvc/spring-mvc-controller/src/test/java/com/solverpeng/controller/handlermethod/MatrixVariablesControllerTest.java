@@ -1,5 +1,6 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
+import com.solverpeng.controller.handlermethod.MatrixVariablesController;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
@@ -9,13 +10,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-public class HandlerMethodMatrixVariablesControllerTest {
+public class MatrixVariablesControllerTest {
     private MockMvc mockMvc;
 
     @Before
     public void setUp() {
 
-        this.mockMvc = MockMvcBuilders.standaloneSetup(new HandlerMethodMatrixVariablesController()).setRemoveSemicolonContent(false).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(new MatrixVariablesController()).setRemoveSemicolonContent(false).build();
     }
 
     @Test

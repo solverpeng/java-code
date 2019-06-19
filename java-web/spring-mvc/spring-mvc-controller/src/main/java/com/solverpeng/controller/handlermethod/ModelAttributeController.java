@@ -1,4 +1,4 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
 import com.solverpeng.bean.Address;
 import com.solverpeng.bean.Person;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/modelAttribute")
-public class HandlerMethodModelAttributeController {
+public class ModelAttributeController {
 
     @ModelAttribute
     public Address getAddress(@PathVariable(required = false) String userId) {

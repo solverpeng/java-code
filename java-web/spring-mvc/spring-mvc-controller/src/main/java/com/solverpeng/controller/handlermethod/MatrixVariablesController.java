@@ -1,4 +1,4 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 // 对于矩阵变量，需要开启支持，默认是关闭的
 @RestController
 @RequestMapping("/handlerMethod")
-public class HandlerMethodMatrixVariablesController {
+public class MatrixVariablesController {
 
 
     // GET /matrixVariables/42;q=11;r=22

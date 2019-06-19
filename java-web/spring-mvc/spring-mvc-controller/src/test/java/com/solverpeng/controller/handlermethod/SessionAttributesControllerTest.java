@@ -1,5 +1,6 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
+import com.solverpeng.controller.handlermethod.SessionAttributesController;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
@@ -10,13 +11,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 
-public class HandlerMethodSessionAttributesControllerTest {
+public class SessionAttributesControllerTest {
 
     private MockMvc mockMvc;
 
     @Before
     public void setUp() throws Exception {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(new HandlerMethodSessionAttributesController()).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(new SessionAttributesController()).build();
     }
 
     @Test

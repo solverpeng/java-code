@@ -1,4 +1,4 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
 import com.solverpeng.bean.Person;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/requestParam")
-public class HandlerMethodRequestParamController {
+public class RequestParamController {
 
     // 默认是required
     @RequestMapping("/defaultRequired")

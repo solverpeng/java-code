@@ -1,4 +1,4 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +12,7 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/sessionAttributes")
 @SessionAttributes("name")
-public class HandlerMethodSessionAttributesController {
+public class SessionAttributesController {
 
     @RequestMapping("/add")
     public String addToSessionAttribute(Model model) {

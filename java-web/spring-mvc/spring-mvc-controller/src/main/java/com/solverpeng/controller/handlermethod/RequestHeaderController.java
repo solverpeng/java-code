@@ -1,4 +1,4 @@
-package com.solverpeng.controller;
+package com.solverpeng.controller.handlermethod;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/requestHeader")
-public class HandlerMethodRequestHeaderController {
+public class RequestHeaderController {
 
     @GetMapping("/headers")
     public String handle(@RequestHeader("Accept-Encoding") String encoding,
