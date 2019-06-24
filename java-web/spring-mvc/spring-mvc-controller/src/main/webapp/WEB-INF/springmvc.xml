@@ -12,6 +12,14 @@
         <property name="maxInMemorySize" value="204800" />
         <property name="uploadTempDir" value="/" />
     </bean>
+    
+    <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" id="formattingConversionService">
+        <property name="formatters">
+            <set>
+                <bean class="com.solverpeng.config.LocationFormatter"/>
+            </set>
+        </property>
+    </bean>
 
-    <mvc:annotation-driven enable-matrix-variables="true" ignore-default-model-on-redirect="true"/>
+    <mvc:annotation-driven enable-matrix-variables="true" ignore-default-model-on-redirect="true" conversion-service="formattingConversionService"/>
 </beans>

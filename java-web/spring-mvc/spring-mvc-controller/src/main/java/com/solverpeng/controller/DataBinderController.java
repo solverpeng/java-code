@@ -48,6 +48,9 @@ public class DataBinderController {
         dataBinder.registerCustomEditor(Date.class, "dateOfBirth", propertyEditor);
     }
 
+    /**
+     * 自定义格式化器
+     */
     @InitBinder("trade")
     public void formatter(WebDataBinder dataBinder) {
         DateFormatter dateFormatter = new DateFormatter();
