@@ -17,6 +17,9 @@
               Name <frm:input path="name" />
                    <frm:errors path="name" cssClass="error" />
 
+     Date of Birth <frm:input path="dateOfBirth" type="date"/>
+                       <frm:errors path="dateOfBirth" cssClass="error" />
+
      Email address <frm:input path="email" />
                    <frm:errors path="email" cssClass="error" />
 
