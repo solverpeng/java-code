@@ -10,12 +10,12 @@ import javax.validation.constraints.Size;
 @Data
 public class User {
     private Long id;
-    @Size(min = 5, max = 20)
+    @Size(min = 5, max = 20, message = "{user.name.size}")
     private String name;
-    @NotEmpty
-    @Email
+    @NotEmpty(message = "{user.email.empty}")
+    @Email(message = "{user.email.empty}")
     private String email;
-    @Size(min = 6, max = 20)
-    @Pattern(regexp = "\\S+", message = "不允许空格")
+    @Size(min = 6, max = 20, message = "{user.password.size}")
+    @Pattern(regexp = "\\S+", message = "{user.password.pattern}")
     private String password;
 }
