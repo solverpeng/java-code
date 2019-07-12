@@ -1,9 +1,7 @@
 package com.solverpeng.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.number.CurrencyStyleFormatter;
-import org.springframework.format.number.NumberStyleFormatter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
@@ -24,15 +22,6 @@ public class TradeController {
         if (trade == null) {
             return;
         }
-
-        DateFormatter dateFormatter = new DateFormatter();
-        dateFormatter.setPattern("yyyy-MM-dd");
-
-        binder.addCustomFormatter(dateFormatter, "tradeDate");
-
-        NumberStyleFormatter numberFormatter = new NumberStyleFormatter();
-        numberFormatter.setPattern("#,###,###,###.##");
-        binder.addCustomFormatter(numberFormatter, "amount");
 
         CurrencyStyleFormatter currencyFormatter = new CurrencyStyleFormatter();
         currencyFormatter.setCurrency(
