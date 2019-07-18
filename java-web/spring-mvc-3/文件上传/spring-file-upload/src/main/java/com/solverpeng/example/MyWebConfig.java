@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan
 @Import(MyViewConfig.class)
 public class MyWebConfig {
-
     @Bean
     public MultipartResolver multipartResolver() {
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();

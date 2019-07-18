@@ -48,7 +48,5 @@ public class FileUploadControllerTest {
         MockMultipartHttpServletRequestBuilder requestBuilder =
                 MockMvcRequestBuilders.multipart("/upload").file(multipartFile);
         this.mockMvc.perform(requestBuilder).andExpect(ok).andDo(MockMvcResultHandlers.print());
-
-
     }
 }
