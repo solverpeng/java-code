@@ -11,10 +11,9 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @ComponentScan
-public class AppConfig implements WebMvcConfigurer {
+public class MyAppConfig implements WebMvcConfigurer {
     @Override
-    public void extendMessageConverters (List<HttpMessageConverter<?>> converters) {
-        converters.add(new CsvHttpMessageConverter<>());
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(new YamlHttpMessageConverter<>());
     }
-
 }

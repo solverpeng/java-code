@@ -13,51 +13,52 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.setup.DefaultMockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.junit.Assert.*;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(classes = AppConfig.class)
+@ContextConfiguration(classes = MyAppConfig.class)
 public class ExampleControllerTest {
     @Autowired
     private WebApplicationContext wac;
     private MockMvc mockMvc;
 
     @Before
-    public void setUp() throws Exception {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+    public void setup () {
+        DefaultMockMvcBuilder builder = MockMvcBuilders.webAppContextSetup(this.wac);
+        this.mockMvc = builder.build();
     }
-
     @Test
-    public void testConsumerController() throws Exception {
+    public void testConsumerController () throws Exception {
         MockHttpServletRequestBuilder builder =
                 MockMvcRequestBuilders.post("/newEmployee")
-                        .contentType("text/csv")
+                        .contentType("text/yaml")
                         .accept(MediaType.TEXT_PLAIN_VALUE)
-                        .content(getNewEmployeeListInCsv());
+                        .content(getNewEmployeeInYaml());
         this.mockMvc.perform(builder)
                 .andExpect(MockMvcResultMatchers.status()
                         .isOk())
                 .andExpect(MockMvcResultMatchers.content()
-                        .string("size: 3"))
+                        .string("Employee saved: Tina"))
                 .andDo(MockMvcResultHandlers.print());
     }
-
+    public String getNewEmployeeInYaml () {
+        return "id: 1\nname: Tina\nphoneNumber: 111-111-1111\n";
+    }
 
     @Test
     public void testProducerController () throws Exception {
         MockHttpServletRequestBuilder builder =
-                MockMvcRequestBuilders.get("/employeeList")
-                        .accept("text/csv");
+                MockMvcRequestBuilders.get("/employee")
+                        .accept("text/yaml")
+                        .param("id", "1");
         this.mockMvc.perform(builder)
                 .andExpect(MockMvcResultMatchers.status()
                         .isOk())
                 .andDo(MockMvcResultHandlers.print());
-    }
-
-    public String getNewEmployeeListInCsv() {
-        return "id, name, phoneNumber\n1,Joe,123-212-3233\n2,Sara,132,232,3111\n" +
-                "3,Mike,111-222-3333\n";
     }
 }

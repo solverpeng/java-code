@@ -5,6 +5,9 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 public class ExampleController {
     @RequestMapping(
@@ -19,5 +22,21 @@ public class ExampleController {
         String s = String.format("size: " + employeeList.getList().size());
         System.out.println(s);
         return s;
+    }
+
+    @RequestMapping(
+            value = "/employeeList",
+            produces = "text/csv",
+            method = RequestMethod.GET)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
+    public EmployeeList handleRequest2 () {
+        List<Employee> list = Arrays.asList(
+                new Employee("1", "Tina", "111-111-1111"),
+                new Employee("2", "John", "222-222-2222")
+        );
+        EmployeeList employeeList = new EmployeeList();
+        employeeList.setList(list);
+        return employeeList;
     }
 }
