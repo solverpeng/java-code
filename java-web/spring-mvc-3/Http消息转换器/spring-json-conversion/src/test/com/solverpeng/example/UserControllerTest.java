@@ -42,7 +42,7 @@ public class UserControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(createUserInJson("joe",
                                 "joe@example.com",
-                                "abc"));
+                                "abc", "teacher ma"));
 
         this.mockMvc.perform(builder)
                 .andExpect(MockMvcResultMatchers.status()
@@ -53,7 +53,7 @@ public class UserControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(createUserInJson("mike",
                         "mike@example.com",
-                        "123"));
+                        "123", "teacher ma"));
 
         this.mockMvc.perform(builder)
                 .andExpect(MockMvcResultMatchers.status()
@@ -69,9 +69,10 @@ public class UserControllerTest {
 
     }
 
-    private static String createUserInJson (String name, String email, String password) {
+    private static String createUserInJson (String name, String email, String password, String aBoss) {
         return "{ \"name\": \"" + name + "\", " +
                 "\"emailAddress\":\"" + email + "\"," +
+                "\"aBoss\":\"" + aBoss + "\"," +
                 "\"password\":\"" + password + "\"}";
     }
 }

@@ -14,7 +14,7 @@ public class AppConfig {
     @EventListener
     public void handleContextRefresh(ContextRefreshedEvent event) {
         System.out.println("-- context refreshed --");
-        System.out.println("context: "+
+        System.out.println("context: " +
                 event.getApplicationContext());
 
         handlerAdapter.getMessageConverters()
