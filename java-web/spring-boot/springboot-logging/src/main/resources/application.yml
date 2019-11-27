@@ -1,4 +1,1 @@
 debug: true
-logging:
-  pattern:
-    console:
